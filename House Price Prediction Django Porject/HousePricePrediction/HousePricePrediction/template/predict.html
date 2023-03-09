@@ -1,0 +1,89 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+    .main{
+            position:fixed;
+            top:100px;
+            left:350px;
+            width:700px;
+            background-color:gainsboro;
+            align-items:center;
+            border-radius:5%;
+        }
+        div{
+            padding:15px;
+        }
+        input[type=submit],input[type=button]{
+            background-color:Black;
+            color:white;
+            cursor:pointer;
+            padding: 16px 32px;
+            border-radius:14px;
+        }
+        h1{
+            font-size:40px;
+        }
+        h2{
+            font-size:30px;
+            color:DarkRed;
+        }
+    body{
+        background-image:url("{%static 'img.jpg'%}");
+        background-size:cover;
+        background-repeat:no-repeat;
+    }
+
+    </style>
+</head>
+<body style="text-align:center;">
+    <div class="main">
+        <h1>Please Enter the following values:</h1>
+        <form action="result">
+            <div class="row">
+                <div class="col-sm-4" style="background-color:Bisque;">
+                    <p>Avg.Area Income</p>
+                    <input type="text" name="n1">
+                </div>
+                <div class="col-sm-4" style="background-color:DarkSeaGreen;">
+                    <p>Avg.Area House Age<p>
+                    <input type="text" name="n2">
+                </div>
+                <div class="col-sm-4" style="background-color:LightPink;">
+                    <p>Avg.Area Number of Rooms</p>
+                    <input type="text" name="n3">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4" style="background-color:Turquoise;">
+                    <p>Avg.Area Number of Bedrooms</p>
+                    <input type="text" name="n4">
+                </div>
+                <div class="col-sm-4" style="background-color:RosyBrown;">
+                    <p>Avg.Area of Population</p>
+                    <input type="text" name="n5">
+                </div>
+            </div>
+            <div class="row" id="submit">
+                <input type="submit" value="PREDICT">
+                <input type=button value="Previous Page" onClick="javascript:history.go(-1);">
+            </div>
+
+        </form>
+        <div class="row">
+            <h2>{{result2}}</h2>
+        </div>
+
+    </div>
+
+</body>
+</html>
